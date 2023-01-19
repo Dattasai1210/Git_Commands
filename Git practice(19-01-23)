@@ -1,0 +1,273 @@
+thundersoft@desk048:~$ git --version
+git version 2.34.1
+thundersoft@desk048:~$ mkdir programs
+thundersoft@desk048:~$ cd programs
+thundersoft@desk048:~/programs$ git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /home/thundersoft/programs/.git/
+thundersoft@desk048:~/programs$ vi add.c
+thundersoft@desk048:~/programs$ git add add.c
+thundersoft@desk048:~/programs$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   add.c
+
+thundersoft@desk048:~/programs$ git config --global user.name "Dattasai1210"
+thundersoft@desk048:~/programs$ git config --global user.email "sai.datta@thundersoft.com"
+thundersoft@desk048:~/programs$ git commit -m "first commit"
+[master (root-commit) f43f666] first commit
+ 1 file changed, 11 insertions(+)
+ create mode 100644 add.c
+thundersoft@desk048:~/programs$ git log
+commit f43f666995d1d575e1fa4a7207fa6a068ba4ed5f (HEAD -> master)
+Author: Dattasai1210 <sai.datta@thundersoft.com>
+Date:   Thu Jan 19 13:42:24 2023 +0530
+
+    first commit
+thundersoft@desk048:~/programs$ git show
+commit f43f666995d1d575e1fa4a7207fa6a068ba4ed5f (HEAD -> master)
+Author: Dattasai1210 <sai.datta@thundersoft.com>
+Date:   Thu Jan 19 13:42:24 2023 +0530
+
+    first commit
+
+diff --git a/add.c b/add.c
+new file mode 100644
+index 0000000..07a1c18
+--- /dev/null
++++ b/add.c
+@@ -0,0 +1,11 @@
++#include <stdio.h>
++int main()
++{
++       int A, B, sum = 0;
++       printf("Enter two numbers A and B : \n");
++       scanf("%d%d", &A, &B);
++       sum = A + B;
++       printf("Sum of A and B is: %d", sum);
++       return 0;
++}
++
+thundersoft@desk048:~/programs$ git remote add origin https://github.com/Dattasai1210/Git_Commands.git
+thundersoft@desk048:~/programs$ git push -u origin master
+Username for 'https://github.com': Dattasai1210
+Password for 'https://Dattasai1210@github.com': 
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 6 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 352 bytes | 352.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Dattasai1210/Git_Commands.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+thundersoft@desk048:~/programs$ git pull https://github.com/Dattasai1210/Git_Commands.git
+From https://github.com/Dattasai1210/Git_Commands
+ * branch            HEAD       -> FETCH_HEAD
+Already up to date.
+thundersoft@desk048:~/programs$ git branch
+* master
+thundersoft@desk048:~/programs$ git branch feature
+thundersoft@desk048:~/programs$ git branch
+  feature
+* master
+thundersoft@desk048:~/programs$ git checkout feature
+Switched to branch 'feature'
+thundersoft@desk048:~/programs$ ls
+add.c
+thundersoft@desk048:~/programs$ vi add.c
+thundersoft@desk048:~/programs$ git add .
+thundersoft@desk048:~/programs$ git commit -m "feature commit"
+[feature 0842aac] feature commit
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+thundersoft@desk048:~/programs$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+thundersoft@desk048:~/programs$ git merge feature
+Updating f43f666..0842aac
+Fast-forward
+ add.c | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+thundersoft@desk048:~/programs$ git branch -d feature
+Deleted branch feature (was 0842aac).
+thundersoft@desk048:~/programs$ git checkout -b new
+Switched to a new branch 'new'
+thundersoft@desk048:~/programs$ vi add.c
+thundersoft@desk048:~/programs$ git add .
+thundersoft@desk048:~/programs$ git commit -m "New"
+[new 29b9eb1] New
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+thundersoft@desk048:~/programs$ cd ..
+thundersoft@desk048:~$ mkdir slotions
+thundersoft@desk048:~$ cd solutions
+bash: cd: solutions: No such file or directory
+thundersoft@desk048:~$ mkdir solution
+thundersoft@desk048:~$ cd solution
+thundersoft@desk048:~/solution$ git clone https://github.com/Dattasai1210/Git_Commands.git
+Cloning into 'Git_Commands'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0
+Receiving objects: 100% (3/3), done.
+thundersoft@desk048:~/solution$ ls
+Git_Commands
+thundersoft@desk048:~/solution$ cd Git_Commands/
+thundersoft@desk048:~/solution/Git_Commands$ ls
+add.c
+thundersoft@desk048:~/solution/Git_Commands$ git pull origin master
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 699 bytes | 349.00 KiB/s, done.
+From https://github.com/Dattasai1210/Git_Commands
+ * branch            master     -> FETCH_HEAD
+   f43f666..41982ba  master     -> origin/master
+Updating f43f666..41982ba
+Fast-forward
+ add.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+thundersoft@desk048:~/solution/Git_Commands$ ls
+add.c
+thundersoft@desk048:~/solution/Git_Commands$ vi add.c
+thundersoft@desk048:~/solution/Git_Commands$ vi sub.c
+thundersoft@desk048:~/solution/Git_Commands$ git add .
+thundersoft@desk048:~/solution/Git_Commands$ git commit -m "Remote"
+[master 2c3ed0a] Remote
+ 1 file changed, 5 insertions(+)
+ create mode 100644 sub.c
+thundersoft@desk048:~/solution/Git_Commands$ git push origin master
+Username for 'https://github.com': Dattasai1210
+Password for 'https://Dattasai1210@github.com': 
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 6 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 323 bytes | 323.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Dattasai1210/Git_Commands.git
+   41982ba..2c3ed0a  master -> master
+thundersoft@desk048:~/solution/Git_Commands$ vi mul.c
+thundersoft@desk048:~/solution/Git_Commands$ git add .
+thundersoft@desk048:~/solution/Git_Commands$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   mul.c
+
+thundersoft@desk048:~/solution/Git_Commands$ git stash -u
+Saved working directory and index state WIP on master: 2c3ed0a Remote
+thundersoft@desk048:~/solution/Git_Commands$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+thundersoft@desk048:~/solution/Git_Commands$ git stash list
+stash@{0}: WIP on master: 2c3ed0a Remote
+thundersoft@desk048:~/solution/Git_Commands$ git stash show
+ mul.c | 5 +++++
+ 1 file changed, 5 insertions(+)
+thundersoft@desk048:~/solution/Git_Commands$ git stash apply
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   mul.c
+
+thundersoft@desk048:~/solution/Git_Commands$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   mul.c
+
+thundersoft@desk048:~/solution/Git_Commands$ cd
+thundersoft@desk048:~$ mkdir solve
+thundersoft@desk048:~$ cd solve
+thundersoft@desk048:~/solve$ git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /home/thundersoft/solve/.git/
+thundersoft@desk048:~/solve$ vi div.c
+thundersoft@desk048:~/solve$ git add .
+thundersoft@desk048:~/solve$ git commit -m "log"
+[master (root-commit) 3bc99e5] log
+ 1 file changed, 5 insertions(+)
+ create mode 100644 div.c
+thundersoft@desk048:~/solve$ git log
+commit 3bc99e50656579d04a430bef4573c8a0120149b5 (HEAD -> master)
+Author: Dattasai1210 <sai.datta@thundersoft.com>
+Date:   Thu Jan 19 14:06:10 2023 +0530
+
+    log
+thundersoft@desk048:~/solve$ vi div.c
+thundersoft@desk048:~/solve$ git add .
+thundersoft@desk048:~/solve$ git commit -m "Last Commit"
+[master bf833e6] Last Commit
+ 1 file changed, 1 insertion(+)
+thundersoft@desk048:~/solve$ git log --oneline
+bf833e6 (HEAD -> master) Last Commit
+3bc99e5 log
+thundersoft@desk048:~/solve$ git revert bf833e6
+[master bf30f18] Revert "Last Commit"
+ 1 file changed, 1 deletion(-)
+thundersoft@desk048:~/solve$ cat div.c
+#include<stdio.h>
+int main()
+{
+	printf("Hi");
+}
+thundersoft@desk048:~/solve$ git revert HEAD
+[master 9f81e48] Revert "Revert "Last Commit""
+ 1 file changed, 1 insertion(+)
+thundersoft@desk048:~/solve$ ls
+div.c
+thundersoft@desk048:~/solve$ cat div.c
+#include<stdio.h>
+int main()
+{
+	printf("Hi");
+	printf("Hello");
+}
+thundersoft@desk048:~/solve$ git rebase master
+Current branch master is up to date.
+thundersoft@desk048:~/solve$ git branch wings
+thundersoft@desk048:~/solve$ git checkout wings
+Switched to branch 'wings'
+thundersoft@desk048:~/solve$ ls
+div.c
+thundersoft@desk048:~/solve$ vi div.c
+thundersoft@desk048:~/solve$ git add .
+thundersoft@desk048:~/solve$ git commit -m "Rebase"
+[wings 3488600] Rebase
+ 1 file changed, 1 deletion(-)
+thundersoft@desk048:~/solve$ git rebase master
+Current branch wings is up to date.
+thundersoft@desk048:~/solve$ 
+
