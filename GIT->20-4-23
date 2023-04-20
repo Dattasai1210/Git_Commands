@@ -1,0 +1,72 @@
+thundersoft@desk048:~$ mkdir marvel
+thundersoft@desk048:~$ cd marvel
+thundersoft@desk048:~/marvel$ git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /home/thundersoft/marvel/.git/
+thundersoft@desk048:~/marvel$ git add . && git commit -am "hlo"
+On branch master
+
+Initial commit
+
+nothing to commit (create/copy files and use "git add" to track)
+thundersoft@desk048:~/marvel$ vi hero.c
+thundersoft@desk048:~/marvel$ vi heroine.c
+thundersoft@desk048:~/marvel$ git add . && git commit -am "Fav"
+[master (root-commit) c8d962d] Fav
+ 2 files changed, 2 insertions(+)
+ create mode 100644 hero.c
+ create mode 100644 heroine.c
+thundersoft@desk048:~/marvel$ git status
+On branch master
+nothing to commit, working tree clean
+thundersoft@desk048:~/marvel$ git log
+commit c8d962d571a9cda029f754392c7e17e5b5432526 (HEAD -> master)
+Author: Dattasai1210 <sai.datta@thundersoft.com>
+Date:   Thu Apr 20 13:24:09 2023 +0530
+
+    Fav
+thundersoft@desk048:~/marvel$ git status
+On branch master
+nothing to commit, working tree clean
+thundersoft@desk048:~/marvel$ git config --global user.name "Dattasai1210"
+thundersoft@desk048:~/marvel$ git config --global user.email "sai.datta@thundersoft.com"
+thundersoft@desk048:~/marvel$ git config --list --global
+user.email=sai.datta@thundersoft.com
+user.name=Dattasai1210
+color.ui=auto
+thundersoft@desk048:~/marvel$ git commit -m "action"
+On branch master
+nothing to commit, working tree clean
+thundersoft@desk048:~/marvel$ git log
+commit c8d962d571a9cda029f754392c7e17e5b5432526 (HEAD -> master)
+Author: Dattasai1210 <sai.datta@thundersoft.com>
+Date:   Thu Apr 20 13:24:09 2023 +0530
+
+    Fav
+thundersoft@desk048:~/marvel$ vi hero.c
+thundersoft@desk048:~/marvel$ git add hero.c 
+thundersoft@desk048:~/marvel$ git commit -m "action"
+[master 1f397a7] action
+ 1 file changed, 1 insertion(+)
+thundersoft@desk048:~/marvel$ git log
+commit 1f397a75841c9bcc0f116d54abc972123def434a (HEAD -> master)
+Author: Dattasai1210 <sai.datta@thundersoft.com>
+Date:   Thu Apr 20 16:24:21 2023 +0530
+
+    action
+
+commit c8d962d571a9cda029f754392c7e17e5b5432526
+Author: Dattasai1210 <sai.datta@thundersoft.com>
+Date:   Thu Apr 20 13:24:09 2023 +0530
+
+    Fav
+thundersoft@desk048:~/marvel$ 
