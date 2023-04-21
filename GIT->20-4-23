@@ -69,4 +69,33 @@ Author: Dattasai1210 <sai.datta@thundersoft.com>
 Date:   Thu Apr 20 13:24:09 2023 +0530
 
     Fav
-thundersoft@desk048:~/marvel$ 
+thundersoft@desk048:~/marvel$ git log --oneline
+1f397a7 (HEAD -> master) action
+c8d962d Fav
+thundersoft@desk048:~/marvel$ git log 1f397a7
+commit 1f397a75841c9bcc0f116d54abc972123def434a (HEAD -> master)
+Author: Dattasai1210 <sai.datta@thundersoft.com>
+Date:   Thu Apr 20 16:24:21 2023 +0530
+
+    action
+
+commit c8d962d571a9cda029f754392c7e17e5b5432526
+Author: Dattasai1210 <sai.datta@thundersoft.com>
+Date:   Thu Apr 20 13:24:09 2023 +0530
+
+    Fav
+thundersoft@desk048:~/marvel$ git log -n 2 --oneline
+1f397a7 (HEAD -> master) action
+c8d962d Fav
+thundersoft@desk048:~/marvel$ git commit --amend -m "ActionTheme"
+[master dd81f0e] ActionTheme
+ Date: Thu Apr 20 16:24:21 2023 +0530
+ 1 file changed, 1 insertion(+)
+thundersoft@desk048:~/marvel$ git log --oneline
+dd81f0e (HEAD -> master) ActionTheme
+c8d962d Fav
+thundersoft@desk048:~/marvel$ git commit --amend --author="Dattasai1210<sai.datta@thundersoft.com>"
+[master b1b8569] Action
+ Date: Thu Apr 20 16:24:21 2023 +0530
+ 1 file changed, 1 insertion(+)
+
